@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh_cn">
+<html lang="zh">
 <head>
         <meta charset="utf-8" />
         <title>My super title</title>
@@ -12,8 +12,12 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/">blogs </a></h1>
+                <h1><a href="/">herdsman </a></h1>
                 <nav><ul>
+                    <li><a href="/pages/about-me.html">About Me</a></li>
+                    <li><a href="/pages/bi-ji.html">笔记</a></li>
+                    <li><a href="/pages/jian-kong.html">监控</a></li>
+                    <li><a href="/pages/my-super-post.html">正则表达式整理</a></li>
                     <li class="active"><a href="/category/python.html">Python</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
@@ -27,7 +31,7 @@
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2010-12-03T10:20:00+01:00">
+        <abbr class="published" title="2010-12-03T10:20:00+08:00">
                 Published: 五 03 十二月 2010
         </abbr>
 
@@ -71,5 +75,14 @@ hello</p>
                 <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
+<script type="text/javascript">
+    var disqus_shortname = 'linuxzen';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 </body>
 </html>
