@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>正则表达式整理</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">herdsman </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/about-me.html">About Me</a></li>
+                    <li><a href="/pages/bi-ji.html">笔记</a></li>
+                    <li><a href="/pages/jian-kong.html">监控</a></li>
+                    <li><a href="/pages/my-super-post.html">正则表达式整理</a></li>
+                    <li class="active"><a href="/pages/my-super-post-1.html">正则表达式整理</a></li>
+                    <li><a href="/category/python.html">Python</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">正则表达式整理</h1>
+    
+    <p>This is the content of my super blog post.</p>
+<h1>论运维工作</h1>
+<h2>运维自动化发展的几个过程</h2>
+<h3>第一：环境统一化</h3>
+<h3>有的时候运维出了问题会出现手忙脚乱的情况，这大部分是由于业务环境杂乱导致，当然，由你一手缔造的环境你可能清楚，可大部分运维都是接手别人的工作，这时候环境杂乱无章，无疑会给新入职的运维人员很大的困扰，运维入职第一点基本都是先梳理线上环境，其实可以用新入职运维上手时间来衡量你的环境是否统一</h3>
+<ol>
+<li>web项目家目录</li>
+<li>数据目录</li>
+<li>程序目录</li>
+<li>日志目录</li>
+<li>机器信息目录</li>
+<li>脚本工具目录</li>
+<li>pid目录</li>
+<li>登录方式</li>
+<li>软件包目录</li>
+</ol>
+<h2>第二：业务脚本化，文档化</h2>
+<ol>
+<li>系统安全：通过脚本修改或打开机器的防火墙，进行快速的安全部署，批量更改机器密码，key</li>
+<li>数据备份：通过脚本实现程序，数据的定时备份</li>
+<li>过期数据，日志清理：脚本清理机器的废物数据，过期日志</li>
+<li>处理事故记录：每次大大小小的事故处理完后进行文档记录，提交git、svn，提高下次问题出现处理速度，文档要求，其他运维看着文档可以完成一次故障处理</li>
+<li>通过脚本来完成线上代码快速更新，避免人工操作失误</li>
+<li>服务搭建记录：搭建服务记录文档，保证下次搭建统一化，快速化</li>
+</ol>
+<h2>第三：页面化</h2>
+<p>其实当你的环境统一，文档规范，脚本高效的情况下，页面化就呼之欲出了，无论是采用开源工具，亦或是自己开发，都是来调用自己的脚本，读自己的数据中心，运维的管理工具鉴于运维人员并不是人人都具有开发功底，并且业务多变，脚本多变的原因所在，应该尽量的避免运维工具掺杂业务逻辑，只处理连接机器，发送处理请求即可，而业务逻辑都是通过页面快速添加修改脚本来完成。</p>
+<h2>第四：服务化</h2>
+<p>当你完成以上三点的时候，相信你已经不再满足每次去帮开发准备nginx，mysql机器了，哪怕仅仅是通过页面进行点击，这时候我们需要做到业务服务化，所有环境皆集群，我们需要做的仅仅是扩展并完善我们的集群，而不是搭建新的环境</p>
+<hr>
+<h2>运维部门发展</h2>
+<ol>
+<li>构造稳定的运维环境：做好监控，第一时间发现问题，自愈问题，构造高可用，高负载集群。（自我工作的完善）</li>
+<li>写博客，写文档，做演示，展示我们的劳动成果（劳动成果的展示）</li>
+<li>权限申请自动化， 线上环境规则制定，公司统一的基础信息库等（运维产出）</li>
+<li>做日志采集平台，运维自动化平台，监控平台（监控电子屏）等（运维产出）</li>
+<li>工具开源化（运维产出）</li>
+</ol>
+<hr>
+<p>未完待续</p>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'linuxzen';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
