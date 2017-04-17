@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>python处理shell的几个模块</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">herdsman </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/about-me.html">About Me</a></li>
+                    <li><a href="/pages/bi-ji.html">笔记</a></li>
+                    <li><a href="/pages/jian-kong.html">监控</a></li>
+                    <li class="active"><a href="/pages/my-super-post2.html">python处理shell的几个模块</a></li>
+                    <li><a href="/pages/my-super-post.html">正则表达式整理</a></li>
+                    <li><a href="/pages/my-super-post-1.html">运维</a></li>
+                    <li><a href="/category/python.html">Python</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">python处理shell的几个模块</h1>
+    
+    <p>This is the content of my super blog post.</p>
+<h1>python处理shell的几个模块</h1>
+<h3>运维写python难免要与shell命令交互，介绍几个常用模块</h3>
+<ul>
+<li>commands</li>
+<li>os.system</li>
+<li>os.popen</li>
+<li>
+<p>sh</p>
+</li>
+<li>
+<p>os.system模块</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+<span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">a</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;lsl&#39;</span><span class="p">)</span>
+<span class="n">sh</span><span class="p">:</span> <span class="n">lsl</span><span class="p">:</span> <span class="n">command</span> <span class="ow">not</span> <span class="n">found</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">a</span>
+<span class="mi">32512</span>
+</pre></div>
+
+
+<p>执行shell命令，并且直接输出结果，结果不可捕获，成功返回0</p>
+</li>
+<li>
+<p>os.popen模块</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s1">&#39;file&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">a</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<p>执行shell命令，可以捕获到结果，用file的方式返回，对其进行读取使用read()</p>
+</li>
+<li>
+<p>sh模块</p>
+<p>执行shell命令</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sh</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sh</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+
+
+<p>执行带参数的shell命令</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; ls = sh.ls.bake(&#39;-al&#39;)
+&gt;&gt;&gt; ls(&#39;.&#39;)
+total 0
+drwxr-xr-x   3 playcrab  staff   102  4 17 22:36 .
+drwxr-xr-x+ 61 playcrab  staff  2074  4 17 22:36 ..
+-rw-r--r--   1 playcrab  staff     0  4 17 22:36 test.txt
+
+&gt;&gt;&gt;
+</pre></div>
+
+
+<p>打印结果和类型</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; a = sh.ls(&#39;.&#39;)
+&gt;&gt;&gt; print a
+nihao.txt   test.txt
+
+&gt;&gt;&gt; print type(a)
+&lt;class &#39;sh.RunningCommand&#39;&gt;
+</pre></div>
+
+
+<p>执行shell脚本</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; a = sh.Command(&#39;/Users/playcrab/nihao/nihao.sh&#39;)
+&gt;&gt;&gt; a()
+123
+
+&gt;&gt;&gt;
+</pre></div>
+
+
+<p>管道</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; a = sh.wc.bake(&#39;-l&#39;)
+&gt;&gt;&gt; a(sh.ls(&#39;/Users/playcrab/nihao/nihao.sh&#39;))
+       1
+
+&gt;&gt;&gt;
+</pre></div>
+
+
+</li>
+<li>
+<p>commands模块</p>
+<p>简单获取命令返回值，执行结果</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">commands</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">status</span><span class="p">,</span><span class="n">output</span> <span class="o">=</span> <span class="n">commands</span><span class="o">.</span><span class="n">getstatusoutput</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">status</span><span class="p">,</span><span class="n">output</span>
+<span class="mi">0</span> <span class="n">nihao</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">nihao</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+
+
+<p>直接返回执行结果</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; commands.getoutput(&#39;pwd&#39;)
+&#39;/Users/playcrab/nihao&#39;
+</pre></div>
+
+
+<p>还有一个getstatus方法，据说已经废掉了，就不介绍了</p>
+</li>
+</ul>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'linuxzen';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
