@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>markdown 使用语法</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">herdsman </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/about-me.html">About Me</a></li>
+                    <li><a href="/pages/bi-ji.html">笔记</a></li>
+                    <li><a href="/pages/jian-kong.html">监控</a></li>
+                    <li><a href="/pages/my-super-post3.html">linux 内核篇</a></li>
+                    <li class="active"><a href="/pages/my-super-post4.html">markdown 使用语法</a></li>
+                    <li><a href="/pages/my-super-post2.html">python处理shell的几个模块</a></li>
+                    <li><a href="/pages/my-super-post7.html">vpn服务器pptp模式搭建过程</a></li>
+                    <li><a href="/pages/my-super-post.html">正则表达式整理</a></li>
+                    <li><a href="/pages/my-super-post-1.html">运维</a></li>
+                    <li><a href="/category/python.html">Python</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">markdown 使用语法</h1>
+    
+    <p>This is the content of my super blog post.</p>
+<h1>markdown 使用语法</h1>
+<div class="highlight"><pre><span></span>*abc斜体*
+
+**abc粗体**
+
+***abc粗斜体***
+</pre></div>
+
+
+<p>分割线</p>
+<div class="highlight"><pre><span></span>---
+</pre></div>
+
+
+<p>嵌套缩进</p>
+<div class="highlight"><pre><span></span>&gt; 梦
+
+&gt;&gt; 梦中梦
+&gt;&gt;&gt; 盗梦空间
+&gt;
+&gt;&gt; 梦中梦
+
+&gt; 梦
+</pre></div>
+
+
+<p>链接</p>
+<div class="highlight"><pre><span></span>[百度](https://www.baidu.com)
+</pre></div>
+
+
+<p>字号标题</p>
+<div class="highlight"><pre><span></span># h1
+## h2
+### h3
+#### h4
+##### h5
+</pre></div>
+
+
+<p>添加表格</p>
+<div class="highlight"><pre><span></span>这是一个普通段落。
+
+<span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Foo<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+
+这是另一个普通段落。
+</pre></div>
+
+
+<p>无序列表使用星号、加号或是减号作为列表标记：</p>
+<div class="highlight"><pre><span></span>*   Red
+*   Green
+*   Blue
+</pre></div>
+
+
+<p>等同于：</p>
+<div class="highlight"><pre><span></span>+   Red
++   Green
++   Blue
+</pre></div>
+
+
+<p>有序列表则使用数字接着一个英文句点：</p>
+<div class="highlight"><pre><span></span>1.  Bird
+2.  McHale
+3.  Parish
+</pre></div>
+
+
+<p>插入图片</p>
+<div class="highlight"><pre><span></span>美丽花儿： 
+![美丽花儿](http://ww2.sinaimg.cn/large/56d258bdjw1eugeubg8ujj21kw16odn6.jpg &quot;美丽花儿&quot;)
+</pre></div>
+
+
+<p>简单方式写表格：</p>
+<table>
+<thead>
+<tr>
+<th>学号</th>
+<th>姓名</th>
+<th>分数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小明</td>
+<td>男</td>
+<td>75</td>
+</tr>
+<tr>
+<td>小红</td>
+<td>女</td>
+<td>79</td>
+</tr>
+<tr>
+<td>小陆</td>
+<td>男</td>
+<td>92</td>
+</tr>
+</tbody>
+</table>
+<p>好看不： 
+    <img alt="美丽花儿" src="http://ww2.sinaimg.cn/large/56d258bdjw1eugeubg8ujj21kw16odn6.jpg" title="美丽花儿"></p>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'linuxzen';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
